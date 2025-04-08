@@ -1,5 +1,6 @@
 import { Hero } from "@/components/hero";
 import { PortfolioGallery } from "@/components/portfolio-gallery";
+import { ReviewsSection } from "@/components/reviews-section";
 import { ServicesSection } from "@/components/services-section";
 
 export default function Home() {
@@ -8,7 +9,7 @@ export default function Home() {
       <Hero />
       <ServicesSection />
       <PortfolioGallery />
-      <PortfolioGallery />
+      <ReviewsSection />
     </>
   );
 }
