@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import Image from "next/image";
@@ -16,18 +16,6 @@ const images = [
 // TODO: Refactor this component to use semantic tags and improve accessibility
 export const Hero: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [windowWidth, setWindowWidth] = useState(1200);
-
-  useEffect(() => {
-    setWindowWidth(window.innerWidth);
-
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <section className="relative h-[800px] w-full overflow-hidden bg-gray-900">
@@ -43,11 +31,10 @@ export const Hero: React.FC = () => {
           transition={{ duration: 0.5 }}
         >
           <Image
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 object-cover"
             src={image}
             alt={`Slide ${index + 1}`}
-            width={windowWidth}
-            height={800}
+            fill
           />
           <div className="absolute inset-0 bg-black/50" />
         </motion.div>

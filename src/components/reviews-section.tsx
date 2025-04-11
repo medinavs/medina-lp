@@ -84,7 +84,7 @@ export const ReviewsSection: React.FC = () => {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-16 px-4 bg-gray-50" id="testimonials">
+    <section className="py-16 px-4 bg-gray-50" id="reviews">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -96,10 +96,16 @@ export const ReviewsSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="relative px-12">
-          <div className="w-full overflow-hidden" ref={emblaRef}>
-            {/* Embla Carousel */}
-            <div className="flex">
+        <div className="w-full relative flex items-center ">
+          <button
+            className="flex justify-center items-center h-7 w-7 rounded-full border-1 border-slate-300 bg-white hover:bg-gray-100"
+            onClick={scrollPrev}
+            disabled={!prevBtnEnabled}
+          >
+            <ChevronLeft size={20} />
+          </button>
+          <div className=" w-full overflow-hidden" ref={emblaRef}>
+            <div className="flex pb-1">
               {reviews.map((review, index) => (
                 <div
                   key={index}
@@ -109,21 +115,14 @@ export const ReviewsSection: React.FC = () => {
                 </div>
               ))}
             </div>
-            <button
-              className="-left-6 bg-white hover:bg-gray-100"
-              onClick={scrollPrev}
-              disabled={!prevBtnEnabled}
-            >
-              <ChevronLeft size={20} />
-            </button>
-            <button
-              className="-right-6 bg-white hover:bg-gray-100"
-              onClick={scrollNext}
-              disabled={!nextBtnEnabled}
-            >
-              <ChevronRight size={20} />
-            </button>
           </div>
+          <button
+            className="flex justify-center items-center h-7 w-7 rounded-full border-1 border-slate-300 bg-white hover:bg-gray-100"
+            onClick={scrollNext}
+            disabled={!nextBtnEnabled}
+          >
+            <ChevronRight size={20} />
+          </button>
         </div>
       </div>
     </section>

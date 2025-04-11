@@ -7,69 +7,69 @@ import Image from "next/image";
 const projects = [
   {
     id: "1",
-    title: "Modern Kitchen Renovation",
+    title: "Cozinha teste",
     category: "Kitchen",
     beforeImage:
       "https://images.unsplash.com/photo-1556912173-3bb406ef7e77?w=800&q=80",
     afterImage:
       "https://images.unsplash.com/photo-1556911220-bff31c812dba?w=800&q=80",
     description:
-      "Complete transformation of an outdated kitchen into a modern, functional space with custom cabinetry, island, and premium finishes.",
+      "Completa e moderna cozinha planejada com armários sob medida, ilha central e eletrodomésticos integrados.",
   },
   {
     id: "2",
-    title: "Elegant Bedroom Wardrobe",
+    title: "Quarto teste",
     category: "Bedroom",
     beforeImage:
       "https://images.unsplash.com/photo-1536349788264-1b816db3cc13?w=800&q=80",
     afterImage:
       "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=800&q=80",
     description:
-      "Custom-built wardrobe with sliding doors, integrated lighting, and specialized compartments for optimal organization.",
+      "Quarto planejado com armários embutidos, cabeceira personalizada e iluminação ambiente, criando um espaço aconchegante e funcional.",
   },
   {
     id: "3",
-    title: "Living Room Entertainment Center",
+    title: "Sala de Estar teste",
     category: "Living Room",
     beforeImage:
       "https://images.unsplash.com/photo-1585128792020-803d29415281?w=800&q=80",
     afterImage:
       "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=800&q=80",
     description:
-      "Bespoke entertainment center with floating shelves, hidden cable management, and adjustable components to accommodate various media devices.",
+      "Sala de estar moderna com estante planejada, sofá sob medida e mesa de centro, ideal para receber amigos e familiares.",
   },
   {
     id: "4",
-    title: "Home Office Workspace",
+    title: "Escritório teste",
     category: "Office",
     beforeImage:
       "https://images.unsplash.com/photo-1526040652367-ac003a0475fe?w=800&q=80",
     afterImage:
       "https://images.unsplash.com/photo-1593476550610-87baa860004a?w=800&q=80",
     description:
-      "Custom-designed home office with built-in desk, shelving, and storage solutions tailored to client's specific workflow needs.",
+      "Escritório planejado com mesa de trabalho, prateleiras e armários, proporcionando um ambiente produtivo e organizado.",
   },
   {
     id: "5",
-    title: "Dining Room Buffet",
+    title: "Buffet teste",
     category: "Dining Room",
     beforeImage:
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=800&q=80",
+      "https://images.unsplash.com/photo-1564383424695-05a0668266ec?q=80&w=2741&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     afterImage:
-      "https://images.unsplash.com/photo-1595514535415-dae8970c381d?w=800&q=80",
+      "https://images.unsplash.com/photo-1564383424695-05a0668266ec?q=80&w=2741&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
-      "Handcrafted dining room buffet with wine rack, silverware drawers, and ample storage for dinnerware and linens.",
+      "Buffet planejado para sala de jantar, com espaço para louças e utensílios, ideal para jantares e reuniões familiares.",
   },
   {
     id: "6",
-    title: "Bathroom Vanity",
+    title: "Banheiro teste",
     category: "Bathroom",
     beforeImage:
       "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&q=80",
     afterImage:
       "https://images.unsplash.com/photo-1620626011761-996317b8d101?w=800&q=80",
     description:
-      "Custom bathroom vanity with dual sinks, soft-close drawers, and water-resistant finishes for durability and style.",
+      "Banheiro planejado com armários sob medida, espelho e iluminação, criando um espaço funcional e elegante.",
   },
 ];
 
@@ -90,6 +90,20 @@ export const PortfolioGallery: React.FC = () => {
     activeFilter === "All"
       ? projects
       : projects.filter((project) => project.category === activeFilter);
+
+  const translateCategory = (category: string) => {
+    const categoriesMap = {
+      All: "Todos",
+      Kitchen: "Cozinha",
+      Bedroom: "Quarto",
+      "Living Room": "Sala de Estar",
+      Office: "Escritório",
+      "Dining Room": "Sala de Jantar",
+      Bathroom: "Banheiro",
+    };
+
+    return categoriesMap[category as keyof typeof categoriesMap] || category;
+  };
 
   return (
     <section className="py-16 px-4 md:px-8 bg-gray-50">
@@ -115,7 +129,7 @@ export const PortfolioGallery: React.FC = () => {
                   : "bg-gray-200 text-gray-700 hover:bg-gray-300"
               }`}
             >
-              {category}
+              {translateCategory(category)}
             </button>
           ))}
         </div>

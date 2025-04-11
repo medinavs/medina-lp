@@ -1,3 +1,4 @@
+import { ContactSection } from "@/components/contact-section";
 import { Hero } from "@/components/hero";
 import { PortfolioGallery } from "@/components/portfolio-gallery";
 import { ReviewsSection } from "@/components/reviews-section";
@@ -10,6 +11,7 @@ export default function Home() {
       <ServicesSection />
       <PortfolioGallery />
       <ReviewsSection />
+      <ContactSection />
     </>
   );
 }
