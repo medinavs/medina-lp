@@ -113,11 +113,10 @@ export const PortfolioGallery: React.FC = () => {
             Nosso Portfólio
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            veja veja veja
+            Transformamos ideias em ambientes únicos. Confira nossos projetos
           </p>
         </div>
 
-        {/* Categories */}
         <div className="flex flex-wrap justify-center gap-2 mb-10">
           {categories.map((category) => (
             <button

@@ -1,12 +1,14 @@
 import { Navbar } from "@/components/navbar";
 import "./globals.css";
 import type { Metadata } from "next";
+import { Footer } from "@/components/footer";
+import medinaLogo from "@/public/medina-rounded.jpg";
 
 export const metadata: Metadata = {
   title: "Marcenaria Medina Planejados",
   icons: {
     // TODO: add favicon tomorrow
-    icon: "",
+    icon: medinaLogo.src,
   },
   keywords: [
     "marcenaria",
@@ -52,8 +54,8 @@ export default function RootLayout({
         <header>
           <Navbar />
         </header>
-          <main>{children}</main>
-        <footer></footer>
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
