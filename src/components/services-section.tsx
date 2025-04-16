@@ -5,7 +5,6 @@ import { ServiceCard } from "./ui/service-card";
 import { Bed, Briefcase, ChefHat, Home, Sofa } from "lucide-react";
 import { motion } from "framer-motion";
 
-
 // TODO: Remove this data from here and move to a separate file
 const services = [
   {
@@ -45,10 +44,9 @@ const services = [
   },
 ];
 
-// TODO: Refactor this component to use semantic tags and improve accessibility
 export const ServicesSection: React.FC = () => {
   return (
-    <section className="py-20 px-4 md:px-8 bg-white">
+    <section className="py-20 px-4 md:px-8 bg-white" id="services">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}

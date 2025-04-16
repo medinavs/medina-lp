@@ -1,4 +1,4 @@
-import { resend } from "@/lib/resend";
+// import { resend } from "@/lib/resend";
 import { schedules } from "@trigger.dev/sdk/v3";
 
 export const SendMonthlyNewsLetter = schedules.task({
@@ -6,6 +6,8 @@ export const SendMonthlyNewsLetter = schedules.task({
   cron: "0 9 1 * *",
   run: async (payload, { ctx }) => {
     console.log("Sending monthly newsletter...");
+
+    console.log(payload, ctx)
 
     // const subscribers = await db.subscribers.findMany({
     //   where: { isActive: true },

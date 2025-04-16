@@ -18,6 +18,14 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   title,
   description,
 }) => {
+  function handleRedirectToWhatsapp() {
+    window.open(
+      "https://api.whatsapp.com/send?phone=5519984448330&text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20" +
+        title,
+      "_blank"
+    );
+  }
+
   return (
     <motion.div
       whileHover={{ y: -10, boxShadow: "0 10px 20px rgba(0,0,0,0.1)" }}
@@ -30,8 +38,11 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
             {title}
           </h3>
           <p className="text-gray-600 mb-4 flex-grow">{description}</p>
-          <div className="flex items-center text-[hsl(210,100%,30%)] font-medium group cursor-pointer">
-            <span>Learn more</span>
+          <div
+            className="flex items-center text-[hsl(210,100%,30%)] font-medium group cursor-pointer"
+            onClick={handleRedirectToWhatsapp}
+          >
+            <span>Saber mais</span>
             <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
