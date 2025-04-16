@@ -56,7 +56,10 @@ export const Hero: React.FC = () => {
 
   return (
     <Dialog>
-      <section className="relative h-[800px] w-full overflow-hidden bg-gray-900" id="home">
+      <section
+        className="relative h-[800px] w-full overflow-hidden bg-gray-900"
+        id="home"
+      >
         {images.map((image, index) => (
           <motion.div
             key={index}
@@ -114,15 +117,29 @@ export const Hero: React.FC = () => {
               Soluções personalizadas de alta qualidade para cozinhas, quartos,
               salas e escritórios
             </motion.p>
-            <DialogTrigger>
-              <Button
-                size="md"
-                className="bg-[hsl(210,100%,30%)] px-6 py-4 text-lg font-semibold hover:bg-[hsl(210,100%,40%)] transition-all duration-400"
-                type="button"
-              >
-                Solicite um Orçamento
-              </Button>
-            </DialogTrigger>
+            <div className="hidden md:inline-block">
+              <DialogTrigger>
+                <Button
+                  size="md"
+                  className="bg-[hsl(210,100%,30%)] px-6 py-4 text-lg font-semibold hover:bg-[hsl(210,100%,40%)] transition-all duration-400"
+                  type="button"
+                >
+                  Solicite um Orçamento
+                </Button>
+              </DialogTrigger>
+            </div>
+            
+            <div className="md:hidden inline-block">
+              <a href="#contact">
+                <Button
+                  size="md"
+                  className="bg-[hsl(210,100%,30%)] px-6 py-4 text-lg font-semibold hover:bg-[hsl(210,100%,40%)] transition-all duration-400"
+                  type="button"
+                >
+                  Solicite um Orçamento
+                </Button>
+              </a>
+            </div>
           </motion.div>
         </div>
         <DialogContent>
