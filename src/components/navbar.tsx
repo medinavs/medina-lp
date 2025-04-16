@@ -1,7 +1,7 @@
 "use client";
 
-import { Menu, Phone, X } from "lucide-react";
-import React, { useEffect, useState } from "react";
+import { Phone } from "lucide-react";
+import React from "react";
 import { Button } from "./ui/button";
 import {
   Dialog,
