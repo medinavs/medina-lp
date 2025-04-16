@@ -2,7 +2,6 @@
   "name": "medina-lp",
   "version": "0.1.0",
   "private": true,
-  "homepage": "",
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -18,7 +17,6 @@
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.6.3",
-    "gh-pages": "^6.3.0",
     "lucide-react": "^0.487.0",
     "next": "15.2.4",
     "radix-ui": "^1.2.0",
